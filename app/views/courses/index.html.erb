@@ -3,6 +3,14 @@
 <h1>Courses</h1>
 
 <table>
+  <%= def search_students_url
+        # code here
+      end
+      form_tag(search_students_url, method: "get") do  %>
+    <%= label_tag(:name, "Search for a Student: ") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+  <% end %>
   <thead>
     <tr>
       <th>Department</th>
@@ -14,7 +22,7 @@
 
   <tbody>
     <% @courses.each do |course| %>
-      <tr>
+      <tr> <!---Random comment-->
       <td><%= course.department.name %></td>
         <td><%= course.number %></td>
         <td><%= course.hours %></td>

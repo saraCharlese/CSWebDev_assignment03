@@ -3,6 +3,14 @@
 <h1>Departments</h1>
 
 <table>
+  <%= def search_departments_url
+        # code here
+      end
+      form_tag(search_departments_url, method: "get") do  %>
+    <%= label_tag(:name, "Search for Departments: ") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+  <% end %>
   <thead>
     <tr>
       <th>Name</th>

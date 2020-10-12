@@ -3,6 +3,14 @@
 <h1>Professors</h1>
 
 <table>
+  <%= def search_professors_url
+        # code here
+      end
+      form_tag(search_professors_url, method: "get") do  %>
+    <%= label_tag(:name, "Search for a Professor: ") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+  <% end %>
   <thead>
     <tr>
       <th>Name</th>
