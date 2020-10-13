@@ -1,9 +1,32 @@
 Rails.application.routes.draw do
-  resources :sections
-  resources :courses
-  resources :departments
-  resources :semesters
-  resources :professors
-  resources :students
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  resources :sections do
+    collection do
+      get 'search'
+    end
+  end
+  resources :courses do
+    collection do
+      get 'search'
+    end
+  end
+  resources :semesters do
+    collection do
+      get 'search'
+    end
+  end
+  resources :departments do
+    collection do
+      get 'search'
+    end
+  end
+  resources :professors do
+    collection do
+      get 'search'
+    end
+  end
+  resources :students do
+    collection do
+      get 'search'
+    end
+  end
+  end

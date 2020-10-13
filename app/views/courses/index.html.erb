@@ -7,10 +7,11 @@
         # code here
       end
       form_tag(search_students_url, method: "get") do  %>
-    <%= label_tag(:name, "Search for a Student: ") %>
-    <%= text_field_tag(:name) %>
+    <%= label_tag(:query, "Search for a Student: ") %>
+    <%= text_field_tag(:query) %>
     <%= submit_tag("Search") %>
   <% end %>
+
   <thead>
     <tr>
       <th>Department</th>

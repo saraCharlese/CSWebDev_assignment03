@@ -1,6 +1,11 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @students = Professor.where("name like ?", "%#{params[:query]}%")
+    render :index
+  end
+
   # GET /professors
   # GET /professors.json
   def index

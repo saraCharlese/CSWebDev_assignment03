@@ -1,6 +1,11 @@
 class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @students = Department.where("name like ?", "%#{params[:query]}%")
+    render :index
+  end
+
   # GET /departments
   # GET /departments.json
   def index

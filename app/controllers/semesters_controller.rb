@@ -1,6 +1,11 @@
 class SemestersController < ApplicationController
   before_action :set_semester, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @students = Semester.where("name like ?", "%#{params[:query]}%")
+    render :index
+  end
+
   # GET /semesters
   # GET /semesters.json
   def index
